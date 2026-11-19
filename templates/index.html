@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tripartita — Conversaciones con IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Tripartita">
+        <span class="brand-mark"><i></i><i></i><i></i></span>
+        <span>TRIPARTITA</span>
+      </a>
+
+      <section class="control-panel">
+        <p class="eyebrow">Nueva conversación</p>
+        <div class="mode-switch" role="radiogroup" aria-label="Modo de conversación">
+          <button class="mode-button active" type="button" data-mode="guided" role="radio" aria-checked="true">Impuesto por mí</button>
+          <button class="mode-button" type="button" data-mode="autonomous" role="radio" aria-checked="false">Las IAs eligen</button>
+        </div>
+
+        <label id="topicLabel" for="topic">Tema del debate</label>
+        <textarea id="topic" maxlength="240" placeholder="Ej. ¿Debe una empresa usar IA en sus decisiones?">¿Puede la inteligencia artificial impulsar la creatividad sin reemplazar el criterio humano?</textarea>
+
+        <button id="startButton" class="primary-button" type="button">
+          <span>Iniciar conversación</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </section>
+
+      <div class="participants">
+        <p class="eyebrow">Participantes</p>
+        <div class="participant"><span class="avatar cyan">P</span><div><strong>IA Pro</strong><small>Visión estratégica</small></div></div>
+        <div class="participant"><span class="avatar coral">C</span><div><strong>IA Crítica</strong><small>Análisis escéptico</small></div></div>
+        <div class="participant"><span class="avatar violet">M</span><div><strong>IA Moderadora</strong><small>Facilitadora neutral</small></div></div>
+      </div>
+    </aside>
+
+    <section class="conversation">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Conversación actual</p>
+          <h1 id="topicTitle">¿Puede la inteligencia artificial impulsar la creatividad sin reemplazar el criterio humano?</h1>
+        </div>
+        <button id="resetButton" class="icon-button" type="button" title="Nueva conversación" aria-label="Nueva conversación">↻</button>
+      </header>
+
+      <div id="messages" class="messages" aria-live="polite">
+        <div class="empty-state">
+          <div class="orb"><span></span><span></span><span></span></div>
+          <h2>Un debate inteligente comienza aquí</h2>
+          <p>Elige un tema o deja que las tres perspectivas lo encuentren por sí mismas.</p>
+        </div>
+      </div>
+
+      <footer class="composer">
+        <div id="turnStatus" class="turn-status"><span class="status-dot"></span><span>Lista para comenzar</span></div>
+        <div class="composer-actions">
+          <button id="autoButton" class="secondary-button" type="button" disabled>Generar siguiente turno</button>
+          <button id="pauseButton" class="icon-button small" type="button" disabled title="Pausar" aria-label="Pausar">Ⅱ</button>
+        </div>
+      </footer>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
